@@ -16,6 +16,7 @@ int main(int argc, char* argv[])
     if (argc == 1) return EXIT_FAILURE;
     size_t n = std::stoul(argv[1]);
     std::vector<Point2D<double>> point;
+    point.reserve(n);
     srand(static_cast<unsigned>(time(nullptr)));
     for (size_t i = 0; i < n; i++) {
         point.emplace_back(rnd(), rnd());
