@@ -4,6 +4,8 @@ project(algorithms_4th CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 
+include_directories(include)
+
 add_compile_options(
   -g
   -pedantic

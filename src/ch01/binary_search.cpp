@@ -2,14 +2,7 @@
 #include <fstream>
 #include <iostream>
 #include <vector>
-
-std::vector<int> read_ints(std::istream&& is)
-{
-    std::vector<int> ints;
-    int val;
-    while (is >> val) ints.push_back(val);
-    return ints;
-}
+#include "util/in.hpp"
 
 int rank(const int key, const std::vector<int>& a)
 {
@@ -29,7 +22,7 @@ int rank(const int key, const std::vector<int>& a)
 int main(int argc, char* argv[])
 {
     if (argc == 1) return EXIT_FAILURE;
-    auto whitelist = read_ints(std::fstream{argv[1]});
+    auto whitelist = in::read<int>(std::fstream{argv[1]});
     std::sort(whitelist.begin(), whitelist.end());
     // Read key, print if not in whitelist.
     int key;
