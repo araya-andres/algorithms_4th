@@ -17,7 +17,7 @@ int main(int argc, char* argv[])
     }
     auto d = heads.tally() - tails.tally();
     std::cout
-        << heads.str() << '\n'
-        << tails.str() << '\n'
+        << heads << '\n'
+        << tails << '\n'
         << "delta: " << abs(d) << '\n';
 }

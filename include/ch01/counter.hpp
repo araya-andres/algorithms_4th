@@ -26,3 +26,5 @@ private:
     std::string id_;
     int counter_ = 0;
 };
+
+std::ostream& operator<<(std::ostream&, const Counter&);
