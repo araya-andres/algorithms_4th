@@ -23,7 +23,7 @@ struct Counter
     }
 
 private:
-    std::string id_;
+    const std::string id_;
     int counter_ = 0;
 };
 
