@@ -4,29 +4,39 @@
 #include <limits>
 #include <vector>
 
-#include "ch01/point_2d.hpp"
+#include "math/point_2d.hpp"
+#include "math/random.hpp"
 
-inline double rnd()
+using points = std::vector<math::Point2D<double>>;
+
+auto initialize_list(size_t n)
 {
-    return 1.0 * rand() / RAND_MAX;
+    points lst;
+    lst.reserve(n);
+    math::set_seed();
+    for (size_t i = 0; i < n; i++) {
+        lst.emplace_back(math::random(), math::random());
+    }
+    return lst;
+}
+
+auto find_min_distance(const points& lst)
+{
+    const auto n = lst.size();
+    auto min = std::numeric_limits<double>::max();
+    for (size_t i = 0; i < n - 1; i++) {
+        for (size_t j = i + 1; j < n; j++) {
+            auto d = math::squared_distance(lst[i], lst[j]);
+            if (d < min) min = d;
+        }
+    }
+    return min;
 }
 
 int main(int argc, char* argv[])
 {
     if (argc == 1) return EXIT_FAILURE;
-    size_t n = std::stoul(argv[1]);
-    std::vector<Point2D<double>> point;
-    point.reserve(n);
-    srand(static_cast<unsigned>(time(nullptr)));
-    for (size_t i = 0; i < n; i++) {
-        point.emplace_back(rnd(), rnd());
-    }
-    double min = std::numeric_limits<double>::max();
-    for (size_t i = 0; i < n - 1; i++) {
-        for (size_t j = i + 1; j < n; j++) {
-            auto d = squared_distance(point[i], point[j]);
-            if (d < min) min = d;
-        }
-    }
+    auto lst = initialize_list(std::stoul(argv[1]));
+    auto min = find_min_distance(lst);
     std::cout << min << '\n';
 }
