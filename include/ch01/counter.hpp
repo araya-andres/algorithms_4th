@@ -12,7 +12,7 @@ struct Counter
     void increment() { counter_++; }
 
     // Number of increments since creation
-    int tally() { return counter_; }
+    int tally() const { return counter_; }
 
     // String representation
     const std::string toString() const
