@@ -1,12 +1,8 @@
 #include <cstdlib>
 #include <iostream>
 #include <string>
+#include <ctime>
 #include "ch01/counter.hpp"
-
-std::ostream& operator<<(std::ostream& os, const Counter& counter)
-{
-    return os << counter.toString();
-}
 
 int main(int argc, char* argv[])
 {
@@ -14,13 +10,14 @@ int main(int argc, char* argv[])
     auto n = std::stoi(argv[1]);
     Counter heads{"heads"};
     Counter tails{"tails"};
+    srand(static_cast<unsigned>(time(nullptr)));
     for (int i = 0; i < n; i++) {
         if (1.0 * rand() / RAND_MAX < 0.5) heads.increment();
         else tails.increment();
     }
     auto d = heads.tally() - tails.tally();
     std::cout
-        << heads << '\n'
-        << tails << '\n'
+        << heads.str() << '\n'
+        << tails.str() << '\n'
         << "delta: " << abs(d) << '\n';
 }

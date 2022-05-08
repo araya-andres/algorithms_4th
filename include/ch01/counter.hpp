@@ -15,7 +15,7 @@ struct Counter
     int tally() const { return counter_; }
 
     // String representation
-    const std::string toString() const
+    std::string str() const
     {
         std::ostringstream oss;
         oss << counter_ << " " << id_;
