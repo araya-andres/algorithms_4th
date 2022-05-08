@@ -4,7 +4,8 @@
 #include <vector>
 #include "util/in.hpp"
 
-int rank(const int key, const std::vector<int>& a)
+template <typename T>
+int rank(const T key, const std::vector<T>& a)
 {
     // Array must be sorted.
     size_t lo = 0;
