@@ -1,7 +1,9 @@
 #pragma once
 
+#include <algorithm>
 #include <istream>
 #include <list>
+#include <sstream>
 #include <string>
 #include <vector>
 
@@ -15,7 +17,7 @@ struct Graph
     {
     }
 
-    static Graph read_from_stream(std::istream& is)
+    static Graph read_from_stream(std::istream&& is)
     {
         size_t e, v, w;
         is >> v >> e;
@@ -49,6 +51,20 @@ struct Graph
     const Edges& adj(size_t v) const
     {
         return adj_.at(v);
+    }
+
+    std::string str() const
+    {
+        std::ostringstream oss;
+        for (size_t i = 0; i < V(); i++) {
+            oss << i << ": ";
+            std::copy(
+                adj_[i].cbegin(), adj_[i].cend(),
+                std::ostream_iterator<size_t>(oss, " ")
+            );
+            oss << '\n';
+        }
+        return oss.str();
     }
 
 private:

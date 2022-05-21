@@ -1,1 +1,1 @@
-add_executable(graph graph.cpp)
+add_executable(test-graph test-graph.cpp)
