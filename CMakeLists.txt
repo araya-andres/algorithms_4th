@@ -16,3 +16,4 @@ add_compile_options(
   -Wconversion)
 
 add_subdirectory(src/ch01)
+add_subdirectory(src/ch04)
