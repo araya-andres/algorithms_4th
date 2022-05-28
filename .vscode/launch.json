@@ -10,7 +10,8 @@
             "request": "launch",
             "program": "${command:cmake.launchTargetPath}",
             "args": [
-                "${workspaceFolder}/data/tinyG.txt"
+                "${workspaceFolder}/data/tinyG.txt",
+                "9"
             ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
