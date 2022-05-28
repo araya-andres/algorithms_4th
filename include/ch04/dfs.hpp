@@ -11,7 +11,7 @@ struct DepthFirstSearch: Search
         dfs(g, s);
     }
 
-    bool marked(Vertice w) const override { return marked_[w]; }
+    bool marked(const Vertice w) const override { return marked_[w]; }
 
     size_t count() const override { return count_; }
 
