@@ -5,7 +5,7 @@
 
 struct DepthFirstSearch: Search
 {
-    DepthFirstSearch(const Graph& g, Vertice s)
+    DepthFirstSearch(const Graph& g, const Vertice s)
         : marked_(g.V())
     {
         dfs(g, s);
@@ -16,7 +16,7 @@ struct DepthFirstSearch: Search
     size_t count() const override { return count_; }
 
 private:
-    void dfs(const Graph& g, Vertice v)
+    void dfs(const Graph& g, const Vertice v)
     {
         marked_[v] = true;
         count_++;

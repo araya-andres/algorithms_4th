@@ -13,7 +13,7 @@ using Edges = std::list<Vertice>;
 struct Graph
 {
     // create a V-vertex graph with no edges
-    Graph(size_t V)
+    Graph(const size_t V)
         : adj_(V)
     {
     }
@@ -37,7 +37,7 @@ struct Graph
     size_t E() const { return edges_; };
 
     // add edge v - w
-    bool add_edge(Vertice v, Vertice w)
+    bool add_edge(const Vertice v, const Vertice w)
     {
         const auto sz = V();
         if (sz <= v || sz <= w)
@@ -49,7 +49,7 @@ struct Graph
     }
 
     // vertices adjacent to v
-    const Edges& adj(Vertice v) const
+    const Edges& adj(const Vertice v) const
     {
         return adj_.at(v);
     }

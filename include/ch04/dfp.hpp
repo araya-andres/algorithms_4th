@@ -4,7 +4,7 @@
 
 struct DepthFirstPaths: Paths
 {
-    DepthFirstPaths(const Graph& g, Vertice s)
+    DepthFirstPaths(const Graph& g, const Vertice s)
         : marked_(g.V())
         , edge_to_(g.V())
         , s_{s}
@@ -29,7 +29,7 @@ struct DepthFirstPaths: Paths
     }
 
 private:
-    void dfs(const Graph& g, Vertice v)
+    void dfs(const Graph& g, const Vertice v)
     {
         marked_[v] = true;
         for (auto w: g.adj(v)) {
