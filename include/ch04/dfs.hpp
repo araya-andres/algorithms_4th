@@ -1,22 +1,22 @@
 #pragma once
 
 #include <vector>
-#include "ch04/graph.hpp"
+#include "ch04/search.hpp"
 
-struct DepthFirstSearch
+struct DepthFirstSearch: Search
 {
-    DepthFirstSearch(const Graph& g, size_t s)
+    DepthFirstSearch(const Graph& g, Vertice s)
         : marked_(g.V())
     {
         dfs(g, s);
     }
 
-    bool marked(size_t w) const { return marked_[w]; }
+    bool marked(Vertice w) const override { return marked_[w]; }
 
-    size_t count() const { return count_; }
+    size_t count() const override { return count_; }
 
 private:
-    void dfs(const Graph& g, size_t v)
+    void dfs(const Graph& g, Vertice v)
     {
         marked_[v] = true;
         count_++;

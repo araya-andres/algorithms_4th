@@ -7,7 +7,8 @@
 #include <string>
 #include <vector>
 
-using Edges = std::list<size_t>;
+using Vertice = size_t;
+using Edges = std::list<Vertice>;
 
 struct Graph
 {
@@ -36,7 +37,7 @@ struct Graph
     size_t E() const { return edges_; };
 
     // add edge v - w
-    bool add_edge(size_t v, size_t w)
+    bool add_edge(Vertice v, Vertice w)
     {
         const auto sz = V();
         if (sz <= v || sz <= w)
@@ -48,7 +49,7 @@ struct Graph
     }
 
     // vertices adjacent to v
-    const Edges& adj(size_t v) const
+    const Edges& adj(Vertice v) const
     {
         return adj_.at(v);
     }
