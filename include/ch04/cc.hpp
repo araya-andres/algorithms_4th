@@ -8,9 +8,9 @@ struct CC
         : marked_(g.V())
         , id_(g.V())
     {
-        for (int s = 0; s <= G.V(); s++) {
+        for (auto s = 0ul; s <= g.V(); s++) {
             if (!marked_[s]) {
-                dfs(G, s);
+                dfs(g, s);
                 count_++;
             }
         }
