@@ -16,6 +16,7 @@ struct DepthFirstSearch: Search
     size_t count() const override { return count_; }
 
 private:
+
     void dfs(const Graph& g, const Vertice v)
     {
         marked_[v] = true;

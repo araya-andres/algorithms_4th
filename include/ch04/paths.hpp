@@ -27,7 +27,9 @@ struct Paths
     }
 
     const char* description() const { return impl_.description(); }
+
 private:
+
     T impl_;
     Vertice s_;
 };

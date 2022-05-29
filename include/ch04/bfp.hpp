@@ -19,6 +19,7 @@ struct BreadthFirstPaths
     const char* description() const { return "Breadth-first search"; }
 
 private:
+
     void bfs(const Graph& g, const Vertice s)
     {
         std::queue<Vertice> q;

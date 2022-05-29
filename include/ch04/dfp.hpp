@@ -18,6 +18,7 @@ struct DepthFirstPaths
     const char* description() const { return "Depth-first search"; }
 
 private:
+
     void dfs(const Graph& g, const Vertice v)
     {
         marked_[v] = true;

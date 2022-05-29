@@ -69,6 +69,7 @@ struct Graph
     }
 
 private:
+
     size_t edges_ = 0;
     std::vector<Edges> adj_;
 };
