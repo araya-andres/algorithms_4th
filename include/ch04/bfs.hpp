@@ -34,16 +34,13 @@ private:
     {
         std::queue<Vertice> q;
         marked_[s] = true;
-        q.push(s);
-        while (!q.empty()) {
+        for (q.push(s); q.size(); q.pop()) {
             auto v = q.front();
-            q.pop();
-            for (auto w: g.adj(v)) {
-                if (!marked_[w]) {
-                    edge_to_[w] = v;
-                    marked_[w] = true;
-                    q.push(w);
-                }
+            for (auto w : g.adj(v)) {
+                if (marked_[w]) continue;
+                edge_to_[w] = v;
+                marked_[w] = true;
+                q.push(w);
             }
         }
     }
