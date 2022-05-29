@@ -20,12 +20,13 @@ struct BreadthFirstPaths: Paths
 
     Edges path_to(const Vertice v) const override
     {
-        if (!has_path_to(v)) return {};
         Edges path;
-        for (auto x = v; x != s_; x = edge_to_[x]) {
-            path.push_front(x);
+        if (has_path_to(v)) {
+            for (auto x = v; x != s_; x = edge_to_[x]) {
+                path.push_front(x);
+            }
+            path.push_front(s_);
         }
-        path.push_front(s_);
         return path;
     }
 
