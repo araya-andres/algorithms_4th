@@ -3,13 +3,14 @@
 #include <string>
 
 #include "ch04/dfp.hpp"
+#include "ch04/bfs.hpp"
 
 int main(int argc, char* argv[])
 {
     if (argc < 3) return EXIT_FAILURE;
     auto g = Graph::read_from_stream(std::fstream{argv[1]});
     auto s = std::stoul(argv[2]);
-    auto search = DepthFirstPaths(g, s);
+    auto search = BreadthFirstPaths(g, s);
     for (auto v = 0ul; v < g.V(); v++) {
         std::cout << s << " to " << v << ": ";
         if (search.has_path_to(v)) {
