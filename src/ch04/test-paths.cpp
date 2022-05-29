@@ -2,15 +2,15 @@
 #include <iostream>
 #include <string>
 
+#include "ch04/paths.hpp"
 #include "ch04/dfp.hpp"
-#include "ch04/bfs.hpp"
+#include "ch04/bfp.hpp"
 
-int main(int argc, char* argv[])
+template<typename T>
+void test(const Graph& g, const Vertice s)
 {
-    if (argc < 3) return EXIT_FAILURE;
-    auto g = Graph::read_from_stream(std::fstream{argv[1]});
-    auto s = std::stoul(argv[2]);
-    auto search = BreadthFirstPaths(g, s);
+    auto search = Paths<T>(g, s);
+    std::cout << search.description() << '\n';
     for (auto v = 0ul; v < g.V(); v++) {
         std::cout << s << " to " << v << ": ";
         if (search.has_path_to(v)) {
@@ -21,4 +21,13 @@ int main(int argc, char* argv[])
         }
         std::cout << '\n';
     }
+}
+
+int main(int argc, char* argv[])
+{
+    if (argc < 3) return EXIT_FAILURE;
+    auto g = Graph::read_from_stream(std::fstream{argv[1]});
+    auto s = std::stoul(argv[2]);
+    test<DepthFirstPaths>(g, s);
+    test<BreadthFirstPaths>(g, s);
 }

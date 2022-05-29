@@ -1,32 +1,21 @@
 #pragma once
 
-#include "ch04/paths.hpp"
+#include "ch04/graph.hpp"
 
-struct DepthFirstPaths: Paths
+struct DepthFirstPaths
 {
     DepthFirstPaths(const Graph& g, const Vertice s)
         : marked_(g.V())
         , edge_to_(g.V())
-        , s_{s}
     {
         dfs(g, s);
     }
 
-    bool has_path_to(const Vertice v) const override
-    {
-        return marked_[v];
-    }
+    bool marked(const Vertice v) const { return marked_[v]; }
 
-    Edges path_to(const Vertice v) const override
-    {
-        if (!has_path_to(v)) return {};
-        Edges path;
-        for (auto x = v; x != s_; x = edge_to_[x]) {
-            path.push_front(x);
-        }
-        path.push_front(s_);
-        return path;
-    }
+    Vertice edge_to(const Vertice v) const { return edge_to_[v]; }
+
+    const char* description() const { return "Depth-first search"; }
 
 private:
     void dfs(const Graph& g, const Vertice v)
@@ -42,5 +31,4 @@ private:
 
     std::vector<bool> marked_;
     std::vector<Vertice> edge_to_;
-    Vertice s_;
 };
