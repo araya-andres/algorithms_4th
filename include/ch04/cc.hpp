@@ -4,11 +4,12 @@
 
 struct CC
 {
+    // preprocessing constructor
     CC(const Graph& g)
         : marked_(g.V())
         , id_(g.V())
     {
-        for (auto s = 0ul; s <= g.V(); s++) {
+        for (auto s = 0ul; s < g.V(); s++) {
             if (!marked_[s]) {
                 dfs(g, s);
                 count_++;
