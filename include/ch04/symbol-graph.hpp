@@ -12,7 +12,7 @@
 struct SymbolGraph
 {
     using Edge = std::tuple<std::string, std::string>;
-    using Keys = std:vector<std::string>;
+    using Keys = std::vector<std::string>;
 
     SymbolGraph(std::istream&& is, std::string_view delimiter)
     {

@@ -5,6 +5,8 @@
 
 int main(int argc, const char* argv[])
 {
-    if (argc < 2) return EXIT_FAILURE;
-    auto sg = SymbolGraph(std::fstream{argv[1]}, " ");
+    if (argc < 3) return EXIT_FAILURE;
+    auto sg = SymbolGraph(std::fstream{argv[1]}, argv[2]);
+    auto g = sg.g();
+    std::cout << g.str() << '\n';
 }
