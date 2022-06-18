@@ -11,6 +11,9 @@
             "program": "${command:cmake.launchTargetPath}",
             "args": [
                 "${workspaceFolder}/data/tinyDG.txt",
+                "1",
+                "2",
+                "6"
             ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
