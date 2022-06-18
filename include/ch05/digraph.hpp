@@ -1,14 +1,6 @@
 #pragma once
 
-#include <algorithm>
-#include <istream>
-#include <list>
-#include <sstream>
-#include <string>
-#include <vector>
-
-using Vertice = size_t;
-using Edges = std::list<Vertice>;
+#include "ch04/graph.hpp"
 
 struct Digraph
 {
