@@ -27,11 +27,11 @@ struct SymbolGraph
             edges.push_back({u, v});
         }
         keys_ = Keys(st_.size());
-        for (auto& [key, index]: st_) {
+        for (const auto& [key, index]: st_) {
             keys_[index] = key;
         }
         g_ = Graph(st_.size());
-        for (auto& [u, v]: edges) {
+        for (const auto& [u, v]: edges) {
             g_.add_edge(st_[u], st_[v]);
         }
     }
@@ -50,7 +50,7 @@ struct SymbolGraph
 
 private:
 
-    std::map<std::string, Vertice> st_;
-    Keys keys_;
-    Graph g_{0};
+    std::map<std::string, Vertice> st_; // string -> index
+    Keys keys_; // index -> string
+    Graph g_{0}; // the graph
 };
