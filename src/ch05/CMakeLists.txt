@@ -1,0 +1,1 @@
+add_executable(test-digraph test-digraph.cpp)

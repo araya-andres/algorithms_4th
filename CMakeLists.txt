@@ -17,3 +17,4 @@ add_compile_options(
 
 add_subdirectory(src/ch01)
 add_subdirectory(src/ch04)
+add_subdirectory(src/ch05)
