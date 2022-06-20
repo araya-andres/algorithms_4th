@@ -7,6 +7,8 @@
 #include <string>
 #include <vector>
 
+#include "ch04/range.hpp"
+
 using Vertice = size_t;
 using Edges = std::list<Vertice>;
 
@@ -54,10 +56,14 @@ struct Graph
         return adj_.at(v);
     }
 
+    Range begin() const { return {}; }
+
+    Range end() const { return {V()}; }
+
     std::string str() const
     {
         std::ostringstream oss;
-        for (size_t i = 0; i < V(); i++) {
+        for (const auto i: *this) {
             oss << i << ": ";
             std::copy(
                 adj_[i].cbegin(), adj_[i].cend(),

@@ -63,6 +63,10 @@ struct Digraph
         return oss.str();
     }
 
+    Range begin() const { return {}; }
+
+    Range end() const { return {V()}; }
+
 private:
 
     size_t edges_ = 0;
