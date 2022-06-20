@@ -26,6 +26,6 @@ struct Range
 
 private:
 
-    size_t n_;
+    T n_;
 };
 
