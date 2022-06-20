@@ -56,9 +56,9 @@ struct Graph
         return adj_.at(v);
     }
 
-    Range begin() const { return {}; }
+    Range<Vertice> begin() const { return {}; }
 
-    Range end() const { return {V()}; }
+    Range<Vertice> end() const { return {V()}; }
 
     std::string str() const
     {

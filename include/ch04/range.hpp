@@ -1,10 +1,15 @@
 #pragma once
 
+template <typename T>
 struct Range
 {
-    Range(size_t n = 0ul): n_{n} {}
+    Range(T n = {}): n_{n} {}
 
-    Range& operator++() { n_++; return *this; }
+    Range& operator++()
+    {
+        n_++;
+        return *this;
+    }
 
     Range operator++(int)
     {
@@ -17,7 +22,7 @@ struct Range
 
     bool operator!=(Range other) const { return !(*this == other); }
 
-    size_t operator*() const { return n_; }
+    T operator*() const { return n_; }
 
 private:
 
