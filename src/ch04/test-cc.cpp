@@ -3,6 +3,7 @@
 #include <queue>
 #include "ch04/cc.hpp"
 
+// ./build/src/ch04/test-cc ./data/tinyG.txt
 int main(int argc, const char* argv[])
 {
     if (argc < 2) return EXIT_FAILURE;
@@ -12,11 +13,11 @@ int main(int argc, const char* argv[])
     auto m = cc.count();
     std::cout << m << " components\n";
     std::vector<std::vector<Vertice>> components(m);
-    for (auto v = 0ul; v < g.V(); v++) {
+    for (const auto v: g) {
         components[cc.id(v)].push_back(v);
     }
     for (const auto& c: components) {
-        for (auto v: c) {
+        for (const auto v: c) {
             std::cout << v << " ";
         }
         std::cout << '\n';

@@ -11,10 +11,10 @@ void test(const Graph& g, const Vertice s)
 {
     auto search = Paths<T>(g, s);
     std::cout << search.description() << '\n';
-    for (auto v = 0ul; v < g.V(); v++) {
+    for (const auto v: g) {
         std::cout << s << " to " << v << ": ";
         if (search.has_path_to(v)) {
-            for (auto x: search.path_to(v)) {
+            for (const auto x: search.path_to(v)) {
                 if (x == s) std::cout << x;
                 else std::cout << '-' << x;
             }
@@ -23,6 +23,7 @@ void test(const Graph& g, const Vertice s)
     }
 }
 
+// ./build/src/ch04/test-paths ./data/tinyCG.txt 0
 int main(int argc, char* argv[])
 {
     if (argc < 3) return EXIT_FAILURE;

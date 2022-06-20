@@ -9,7 +9,7 @@ struct CC
         : marked_(g.V())
         , id_(g.V())
     {
-        for (auto s = 0ul; s < g.V(); s++) {
+        for (const auto s: g) {
             if (!marked_[s]) {
                 dfs(g, s);
                 count_++;

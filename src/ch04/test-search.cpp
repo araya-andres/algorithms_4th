@@ -4,6 +4,8 @@
 
 #include "ch04/dfs.hpp"
 
+// ./build/src/ch04/test-search ./data/tinyG.txt 0
+// ./build/src/ch04/test-search ./data/tinyG.txt 9
 int main(int argc, char* argv[])
 {
     if (argc < 3) return EXIT_FAILURE;
@@ -11,7 +13,7 @@ int main(int argc, char* argv[])
     auto s = std::stoul(argv[2]);
     auto search = DepthFirstSearch(g, s);
 
-    for (auto v = 0ul; v < g.V(); v++) {
+    for (const auto v: g) {
         if (search.marked(v)) {
             std::cout << v << " ";
         }

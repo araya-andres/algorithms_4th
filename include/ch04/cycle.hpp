@@ -8,7 +8,7 @@ struct Cycle
     Cycle(const Graph& g)
         : marked_(g.V())
     {
-        for (auto s = 0ul; s < g.V(); s++) {
+        for (const auto s: g) {
             if (!marked_[s]) dfs(g, s, s);
         }
     }
