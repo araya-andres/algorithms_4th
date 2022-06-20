@@ -18,9 +18,9 @@ struct Range
         return rv;
     }
 
-    bool operator==(Range other) const { return n_ == other.n_; }
+    bool operator==(const Range& other) const { return n_ == other.n_; }
 
-    bool operator!=(Range other) const { return !(*this == other); }
+    bool operator!=(const Range& other) const { return !(*this == other); }
 
     T operator*() const { return n_; }
 
