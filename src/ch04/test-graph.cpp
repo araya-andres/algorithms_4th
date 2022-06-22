@@ -5,6 +5,6 @@
 int main(int argc, char* argv[])
 {
     if (argc < 2) return EXIT_FAILURE;
-    auto g = Graph::read_from_stream(std::fstream{argv[1]});
+    auto g = Graph::read_from_stream<Graph>(std::fstream{argv[1]});
     std::cout << g.str() << '\n';
 }

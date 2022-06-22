@@ -7,7 +7,7 @@
 int main(int argc, const char* argv[])
 {
     if (argc < 2) return EXIT_FAILURE;
-    auto g = Graph::read_from_stream(std::fstream{argv[1]});
+    auto g = Graph::read_from_stream<Graph>(std::fstream{argv[1]});
     auto cc = CC{g};
 
     auto m = cc.count();
