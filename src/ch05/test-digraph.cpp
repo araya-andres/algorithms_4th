@@ -6,6 +6,11 @@
 #include "ch05/directed-cycle.hpp"
 #include "ch05/directed-dfs.hpp"
 
+// ./build/src/ch05/test-digraph ./data/tinyDG.txt
+// # To test DirectedDFS
+// ./build/src/ch05/test-digraph ./data/tinyDG.txt 1
+// ./build/src/ch05/test-digraph ./data/tinyDG.txt 2
+// ./build/src/ch05/test-digraph ./data/tinyDG.txt 1 2 6
 int main(int argc, char* argv[])
 {
     if (argc < 2) return EXIT_FAILURE;
@@ -20,10 +25,9 @@ int main(int argc, char* argv[])
         std::transform(
             argv + 2, argv + argc,
             std::back_inserter(sources),
-            [](const char *arg)
-            { return std::stoul(arg); });
+            [](const char *arg) { return std::stoul(arg); });
         auto reachable = DirectedDFS(g, sources);
-        for (auto v = 0ul; v < g.V(); v++)
+        for (const auto v: g)
         {
             if (reachable.marked(v))
                 std::cout << v << ' ';

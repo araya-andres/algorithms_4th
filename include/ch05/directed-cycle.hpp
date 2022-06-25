@@ -9,7 +9,7 @@ struct DirectedCycle
         , edge_to_(g.V())
         , marked_(g.V())
     {
-        for (auto v = 0ul; v < g.V(); v++) {
+        for (const auto v: g) {
             if (!marked_[v]) dfs(g, v);
         }
     }

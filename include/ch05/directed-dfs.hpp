@@ -7,13 +7,11 @@ struct DirectedDFS
 {
     // find vertices in g that are reachable from s
     DirectedDFS(const Digraph& g, const Vertice s)
-        : marked_(g.V())
-    {
-        dfs(g, s);
-    }
+        : DirectedDFS{g, std::vector<Vertice>{s}}
+    {}
 
     // find vertices in g that are reachable from sources
-    DirectedDFS(const Digraph& g, const std::vector<Vertice> sources)
+    DirectedDFS(const Digraph& g, const std::vector<Vertice>& sources)
         : marked_(g.V())
     {
         for (const auto s: sources) {
@@ -29,7 +27,7 @@ private:
     void dfs(const Digraph& g, const Vertice v)
     {
         marked_[v] = true;
-        for (auto w: g.adj(v)) {
+        for (const auto w: g.adj(v)) {
             if (!marked_[w]) dfs(g, w);
         }
     }
