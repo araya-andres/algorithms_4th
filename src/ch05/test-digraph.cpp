@@ -18,8 +18,7 @@ int main(int argc, char* argv[])
     auto r = g.reverse();
     std::cout << g.str() << '\n'
               << r.str() << '\n';
-    if (argc > 2)
-    {
+    if (argc > 2) {
         std::vector<size_t> sources;
         sources.reserve(static_cast<size_t>(argc - 2));
         std::transform(
@@ -27,10 +26,8 @@ int main(int argc, char* argv[])
             std::back_inserter(sources),
             [](const char *arg) { return std::stoul(arg); });
         auto reachable = DirectedDFS(g, sources);
-        for (const auto v: g)
-        {
-            if (reachable.marked(v))
-                std::cout << v << ' ';
+        for (const auto v: g) {
+            if (reachable.marked(v)) std::cout << v << ' ';
         }
         std::cout << '\n';
     }
