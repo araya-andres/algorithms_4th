@@ -29,6 +29,6 @@ int main(int argc, char* argv[])
     if (argc < 3) return EXIT_FAILURE;
     auto g = Graph::read_from_stream<Graph>(std::fstream{argv[1]});
     auto s = std::stoul(argv[2]);
-    test<DepthFirstPaths<Graph>>(g, s);
-    test<BreadthFirstPaths<Graph>>(g, s);
+    test<DepthFirstPaths>(g, s);
+    test<BreadthFirstPaths>(g, s);
 }

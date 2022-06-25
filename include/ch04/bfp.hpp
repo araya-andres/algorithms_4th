@@ -2,10 +2,9 @@
 
 #include <queue>
 
-template <typename G>
 struct BreadthFirstPaths
 {
-    BreadthFirstPaths(const G& g, const Vertice s)
+    BreadthFirstPaths(const Graph& g, const Vertice s)
         : marked_(g.V())
         , edge_to_(g.V())
     {
@@ -20,7 +19,7 @@ struct BreadthFirstPaths
 
 private:
 
-    void bfs(const G& g, const Vertice s)
+    void bfs(const Graph& g, const Vertice s)
     {
         std::queue<Vertice> q;
         marked_[s] = true;

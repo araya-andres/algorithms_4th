@@ -1,9 +1,8 @@
 #pragma once
 
-template <typename G>
 struct DepthFirstPaths
 {
-    DepthFirstPaths(const G& g, const Vertice s)
+    DepthFirstPaths(const Graph& g, const Vertice s)
         : marked_(g.V())
         , edge_to_(g.V())
     {
@@ -18,7 +17,7 @@ struct DepthFirstPaths
 
 private:
 
-    void dfs(const G& g, const Vertice v)
+    void dfs(const Graph& g, const Vertice v)
     {
         marked_[v] = true;
         for (auto w: g.adj(v)) {
