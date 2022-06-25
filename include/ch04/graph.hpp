@@ -20,11 +20,12 @@ struct Graph
     {
     }
 
-    static Graph read_from_stream(std::istream&& is)
+    template <typename G>
+    static G read_from_stream(std::istream&& is)
     {
         size_t e, v, w;
         is >> v >> e;
-        Graph g{v};
+        G g{v};
         while (e-- > 0) {
             is >> v >> w;
             g.add_edge(v, w);
@@ -39,15 +40,13 @@ struct Graph
     size_t E() const { return edges_; };
 
     // add edge v - w
-    bool add_edge(const Vertice v, const Vertice w)
+    virtual void add_edge(const Vertice v, const Vertice w)
     {
         const auto sz = V();
-        if (sz <= v || sz <= w)
-            return false;
+        if (sz <= v || sz <= w) throw std::out_of_range{""};
         adj_[v].push_front(w);
         adj_[w].push_front(v);
         edges_++;
-        return true;
     }
 
     // vertices adjacent to v
@@ -74,7 +73,7 @@ struct Graph
         return oss.str();
     }
 
-private:
+protected:
 
     size_t edges_ = 0;
     std::vector<Edges> adj_;

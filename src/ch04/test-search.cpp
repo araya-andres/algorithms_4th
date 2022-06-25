@@ -9,7 +9,7 @@
 int main(int argc, char* argv[])
 {
     if (argc < 3) return EXIT_FAILURE;
-    auto g = Graph::read_from_stream(std::fstream{argv[1]});
+    auto g = Graph::read_from_stream<Graph>(std::fstream{argv[1]});
     auto s = std::stoul(argv[2]);
     auto search = DepthFirstSearch(g, s);
 
