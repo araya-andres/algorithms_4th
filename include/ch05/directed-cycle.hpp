@@ -2,21 +2,24 @@
 
 #include "ch05/digraph.hpp"
 
+// cycle-finding
 struct DirectedCycle
 {
     DirectedCycle(const Digraph& g)
-        : on_stack_(g.V())
+        : marked_(g.V())
+        , on_stack_(g.V())
         , edge_to_(g.V())
-        , marked_(g.V())
     {
         for (const auto v: g) {
             if (!marked_[v]) dfs(g, v);
         }
     }
 
-    bool has_cycle() const { return !cycle_.empty(); }
+    // does g have a directed cycle?
+    bool has_cycle() const noexcept { return !cycle_.empty(); }
 
-    const Edges& cycle() const { return cycle_; }
+    // vertices on a cycle (if one exists)
+    const Edges& cycle() const noexcept { return cycle_; }
 
 private:
 
@@ -41,8 +44,8 @@ private:
         on_stack_[v] = false;
     }
 
+    std::vector<bool> marked_;
     std::vector<bool> on_stack_;
     std::vector<Vertice> edge_to_;
-    std::vector<bool> marked_;
     Edges cycle_;
 };

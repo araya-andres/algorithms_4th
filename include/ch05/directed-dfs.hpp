@@ -20,11 +20,11 @@ struct DirectedDFS
     }
 
     // is v reachable?
-    bool marked(const Vertice w) const { return marked_[w]; }
+    bool marked(const Vertice w) const { return marked_.at(w); }
 
 private:
 
-    void dfs(const Digraph& g, const Vertice v)
+    void dfs(const Digraph& g, const Vertice v) noexcept
     {
         marked_[v] = true;
         for (const auto w: g.adj(v)) {

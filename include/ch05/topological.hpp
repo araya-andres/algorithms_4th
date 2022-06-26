@@ -6,9 +6,9 @@
 #include "ch05/digraph.hpp"
 #include "ch05/directed-cycle.hpp"
 
+// topological-sorting
 struct Topological
 {
-    // topological-sorting constructor
     Topological(const Digraph& g)
     {
         DirectedCycle cicle_finder{g};

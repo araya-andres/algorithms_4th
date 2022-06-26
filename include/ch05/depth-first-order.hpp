@@ -14,11 +14,11 @@ struct DepthFirstOrder
         }
     }
 
-    const std::vector<Vertice>& pre() const { return pre_; }
+    const std::vector<Vertice>& pre() const noexcept { return pre_; }
 
-    const std::vector<Vertice>& post() const { return post_; }
+    const std::vector<Vertice>& post() const noexcept { return post_; }
 
-    const std::list<Vertice>& reverse_post() const { return reverse_post_; }
+    const std::list<Vertice>& reverse_post() const noexcept { return reverse_post_; }
 
 private:
 
