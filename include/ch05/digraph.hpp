@@ -17,9 +17,9 @@ struct Digraph: Graph
     // reverse of this digraph
     Digraph reverse()
     {
-        auto r = Digraph(V());
-        for (auto v = 0ul; v < V(); v++) {
-            for (auto w: adj(v)) {
+        Digraph r{V()};
+        for (const auto v: *this) {
+            for (const auto w: adj(v)) {
                 r.add_edge(w, v);
             }
         }

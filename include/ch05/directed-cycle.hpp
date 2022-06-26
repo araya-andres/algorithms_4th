@@ -20,7 +20,7 @@ struct DirectedCycle
 
 private:
 
-    void dfs(const Digraph& g, Vertice v)
+    void dfs(const Digraph& g, const Vertice v)
     {
         on_stack_[v] = true;
         marked_[v] = true;

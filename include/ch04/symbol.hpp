@@ -7,30 +7,33 @@
 #include <vector>
 #include <iostream>
 
-#include "graph.hpp"
+#include "ch04/graph.hpp"
 
-struct SymbolGraph
+template <typename G>
+struct Symbol
 {
     using Edge = std::tuple<std::string, std::string>;
     using Keys = std::vector<std::string>;
 
-    SymbolGraph(std::istream&& is, std::string_view delimiter)
+    Symbol(std::istream&& is, std::string_view delimiter)
     {
         std::vector<Edge> edges;
         std::string line;
         while (getline(is, line)) {
-            auto pos = line.find(delimiter);
-            auto u = line.substr(0, pos);
-            auto v = line.substr(pos + delimiter.size());
+            const auto symbols = split(line, delimiter);
+            const auto& u = symbols[0];
             if (!st_.contains(u)) st_[u] = st_.size();
-            if (!st_.contains(v)) st_[v] = st_.size();
-            edges.push_back({u, v});
+            for (size_t i = 1; i < symbols.size(); i++) {
+                const auto& v = symbols[i];
+                if (!st_.contains(v)) st_[v] = st_.size();
+                edges.push_back({u, v});
+            }
         }
         keys_ = Keys(st_.size());
         for (const auto& [key, index]: st_) {
             keys_[index] = key;
         }
-        g_ = Graph(st_.size());
+        g_ = G{st_.size()};
         for (const auto& [u, v]: edges) {
             g_.add_edge(st_[u], st_[v]);
         }
@@ -46,11 +49,24 @@ struct SymbolGraph
     const std::string& name(Vertice v) const { return keys_.at(v); };
 
     // underlying graph
-    const Graph& g() const noexcept { return g_; }
+    const G& g() const noexcept { return g_; }
 
 private:
 
+    auto split(std::string& s, std::string_view delimiter)
+    {
+        std::vector<std::string> v;
+        auto pos = s.find(delimiter);
+        while (pos != std::string::npos) {
+            v.push_back(s.substr(0, pos));
+            s.erase(0, pos + delimiter.length());
+            pos = s.find(delimiter);
+        }
+        v.push_back(s);
+        return v;
+    }
+
     std::map<std::string, Vertice> st_; // string -> index
     Keys keys_; // index -> string
-    Graph g_{0}; // the graph
+    G g_{0}; // the graph
 };
