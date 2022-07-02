@@ -7,7 +7,7 @@
 #include <string>
 #include <vector>
 
-#include "ch04/range.hpp"
+#include "ch04/iterator.hpp"
 
 using Vertice = size_t;
 using Edges = std::list<Vertice>;
@@ -55,9 +55,9 @@ struct Graph
         return adj_.at(v);
     }
 
-    Range<Vertice> begin() const { return {}; }
+    Iterator<Vertice> begin() const { return {}; }
 
-    Range<Vertice> end() const { return {V()}; }
+    Iterator<Vertice> end() const { return {V()}; }
 
     std::string str() const
     {
