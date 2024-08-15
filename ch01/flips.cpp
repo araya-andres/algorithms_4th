@@ -2,7 +2,8 @@
 #include <iostream>
 #include <string>
 #include <ctime>
-#include "ch01/counter.hpp"
+
+#include "lib/ch01/counter.hpp"
 
 int main(int argc, char* argv[])
 {

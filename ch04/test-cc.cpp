@@ -1,9 +1,9 @@
 #include <fstream>
 #include <iostream>
 #include <queue>
-#include "ch04/cc.hpp"
+#include "lib/ch04/cc.hpp"
 
-// ./build/src/ch04/test-cc ./data/tinyG.txt
+// ./bazel-bin/ch04/test-cc ./data/tinyG.txt
 int main(int argc, const char* argv[])
 {
     if (argc < 2) return EXIT_FAILURE;

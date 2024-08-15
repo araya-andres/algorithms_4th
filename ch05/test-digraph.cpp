@@ -2,15 +2,15 @@
 #include <iomanip>
 #include <iostream>
 
-#include "ch05/digraph.hpp"
-#include "ch05/directed-cycle.hpp"
-#include "ch05/directed-dfs.hpp"
+#include "lib/ch05/digraph.hpp"
+#include "lib/ch05/directed-cycle.hpp"
+#include "lib/ch05/directed-dfs.hpp"
 
-// ./build/src/ch05/test-digraph ./data/tinyDG.txt
+// ./bazel-bin/ch05/test-digraph ./data/tinyDG.txt
 // # To test DirectedDFS
-// ./build/src/ch05/test-digraph ./data/tinyDG.txt 1
-// ./build/src/ch05/test-digraph ./data/tinyDG.txt 2
-// ./build/src/ch05/test-digraph ./data/tinyDG.txt 1 2 6
+// ./bazel-bin/ch05/test-digraph ./data/tinyDG.txt 1
+// ./bazel-bin/ch05/test-digraph ./data/tinyDG.txt 2
+// ./bazel-bin/ch05/test-digraph ./data/tinyDG.txt 1 2 6
 int main(int argc, char* argv[])
 {
     if (argc < 2) return EXIT_FAILURE;

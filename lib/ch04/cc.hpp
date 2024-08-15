@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ch04/graph.hpp"
+#include "lib/ch04/graph.hpp"
 
 struct CC
 {

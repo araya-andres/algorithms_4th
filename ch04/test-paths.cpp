@@ -2,9 +2,9 @@
 #include <iostream>
 #include <string>
 
-#include "ch04/paths.hpp"
-#include "ch04/dfp.hpp"
-#include "ch04/bfp.hpp"
+#include "lib/ch04/paths.hpp"
+#include "lib/ch04/dfp.hpp"
+#include "lib/ch04/bfp.hpp"
 
 template<typename T>
 void test(const Graph& g, const Vertice s)

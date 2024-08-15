@@ -1,7 +1,8 @@
 #pragma once
 
 #include <vector>
-#include "ch05/digraph.hpp"
+
+#include "lib/ch05/digraph.hpp"
 
 struct DirectedDFS
 {

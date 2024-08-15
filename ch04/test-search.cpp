@@ -2,10 +2,10 @@
 #include <iostream>
 #include <string>
 
-#include "ch04/dfs.hpp"
+#include "lib/ch04/dfs.hpp"
 
-// ./build/src/ch04/test-search ./data/tinyG.txt 0
-// ./build/src/ch04/test-search ./data/tinyG.txt 9
+// ./bazel-bin/ch04/test-search ./data/tinyG.txt 0
+// ./bazel-bin/ch04/test-search ./data/tinyG.txt 9
 int main(int argc, char* argv[])
 {
     if (argc < 3) return EXIT_FAILURE;

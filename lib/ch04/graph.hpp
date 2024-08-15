@@ -7,7 +7,7 @@
 #include <string>
 #include <vector>
 
-#include "ch04/iterator.hpp"
+#include "lib/ch04/iterator.hpp"
 
 using Vertice = size_t;
 using Edges = std::list<Vertice>;

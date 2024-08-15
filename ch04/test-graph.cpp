@@ -1,6 +1,6 @@
 #include <fstream>
 #include <iostream>
-#include "ch04/graph.hpp"
+#include "lib/ch04/graph.hpp"
 
 int main(int argc, char* argv[])
 {

@@ -2,9 +2,9 @@
 
 #include <memory>
 
-#include "ch05/depth-first-order.hpp"
-#include "ch05/digraph.hpp"
-#include "ch05/directed-cycle.hpp"
+#include "lib/ch05/depth-first-order.hpp"
+#include "lib/ch05/digraph.hpp"
+#include "lib/ch05/directed-cycle.hpp"
 
 // topological-sorting
 struct Topological

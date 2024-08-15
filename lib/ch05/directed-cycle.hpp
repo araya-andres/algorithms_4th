@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ch05/digraph.hpp"
+#include "lib/ch05/digraph.hpp"
 
 // cycle-finding
 struct DirectedCycle

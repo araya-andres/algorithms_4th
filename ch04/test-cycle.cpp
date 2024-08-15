@@ -1,8 +1,8 @@
 #include <fstream>
 #include <iomanip>
 #include <iostream>
-#include "ch04/cycle.hpp"
-#include "ch04/two-color.hpp"
+#include "lib/ch04/cycle.hpp"
+#include "lib/ch04/two-color.hpp"
 
 int main(int argc, const char* argv[])
 {

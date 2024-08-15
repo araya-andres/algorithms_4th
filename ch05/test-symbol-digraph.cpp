@@ -1,11 +1,11 @@
 #include <fstream>
 #include <iostream>
 
-#include "ch04/symbol.hpp"
-#include "ch05/digraph.hpp"
-#include "ch05/topological.hpp"
+#include "lib/ch04/symbol.hpp"
+#include "lib/ch05/digraph.hpp"
+#include "lib/ch05/topological.hpp"
 
-// ./build/src/ch04/test-symbol-digraph ./data/jobs.txt '/'
+// ./bazel-bin/ch05/test-symbol-digraph ./data/jobs.txt '/'
 int main(int argc, const char* argv[])
 {
     if (argc < 3) return EXIT_FAILURE;

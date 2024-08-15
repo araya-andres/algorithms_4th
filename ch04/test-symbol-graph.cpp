@@ -1,10 +1,10 @@
 #include <fstream>
 #include <iostream>
 
-#include "ch04/graph.hpp"
-#include "ch04/symbol.hpp"
+#include "lib/ch04/graph.hpp"
+#include "lib/ch04/symbol.hpp"
 
-// ./build/src/ch04/test-symbol-graph ./data/routes.txt ' '
+// ./bazel-bin/ch04/test-symbol-graph ./data/routes.txt ' '
 int main(int argc, const char* argv[])
 {
     if (argc < 3) return EXIT_FAILURE;

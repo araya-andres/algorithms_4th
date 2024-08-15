@@ -1,7 +1,7 @@
 #pragma once
 
 #include <vector>
-#include "ch04/search.hpp"
+#include "lib/ch04/search.hpp"
 
 struct DepthFirstSearch: Search
 {

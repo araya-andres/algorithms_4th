@@ -7,7 +7,7 @@
 #include <vector>
 #include <iostream>
 
-#include "ch04/graph.hpp"
+#include "lib/ch04/graph.hpp"
 
 template <typename G>
 struct Symbol

@@ -1,5 +1,6 @@
 #include <iostream>
-#include "ch01/counter.hpp"
+
+#include "counter.hpp"
 
 std::ostream& operator<<(std::ostream& os, const Counter& c)
 {
