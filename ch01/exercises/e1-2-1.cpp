@@ -4,8 +4,8 @@
 #include <limits>
 #include <vector>
 
-#include "math/point_2d.hpp"
-#include "math/random.hpp"
+#include "lib/math/point_2d.hpp"
+#include "lib/math/random.hpp"
 
 using points = std::vector<math::Point2D<double>>;
 
