@@ -2,7 +2,7 @@
 #include <fstream>
 #include <iostream>
 #include <vector>
-#include "util/in.hpp"
+#include "lib/util/in.hpp"
 
 template <typename T>
 int rank(const T key, const std::vector<T>& a)

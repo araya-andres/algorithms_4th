@@ -23,4 +23,4 @@ struct Accumulator
 private:
     int n = 0;
     double total = .0;
-}
+};
