@@ -1,7 +1,7 @@
 #include <algorithm>
 #include <fstream>
 #include <iostream>
-#include "lib/ch01/rank.hpp"
+#include "lib/ch01/binary_search.hpp"
 #include "lib/util/in.hpp"
 
 int main(int argc, char* argv[])
@@ -12,7 +12,7 @@ int main(int argc, char* argv[])
     // Read key, print if not in whitelist.
     int key;
     while (std::cin >> key) {
-        if (rank(key, whitelist) == -1) {
+        if (binary_search::rank(key, whitelist) == -1) {
             std::cout << key << '\n';
         }
     }
