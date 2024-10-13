@@ -21,3 +21,10 @@ or
 ```
 bazel run //tests:tests
 ```
+
+## VSCode Extensions
+
+* [Bazel](https://marketplace.visualstudio.com/items?itemName=BazelBuild.vscode-bazel)
+* [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
+* [C++ TestMate](https://marketplace.visualstudio.com/items?itemName=matepek.vscode-catch2-test-adapter)
+* [CodeLLDB](https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb)
