@@ -9,10 +9,10 @@ int main(int argc, char* argv[])
 {
     if (argc == 1) return EXIT_FAILURE;
     auto n = std::stoi(argv[1]);
-    Counter heads{"heads"};
-    Counter tails{"tails"};
+    auto heads = Counter{"heads"};
+    auto tails = Counter{"tails"};
     srand(static_cast<unsigned>(time(nullptr)));
-    for (int i = 0; i < n; i++) {
+    for (auto i = 0; i < n; i++) {
         if (1.0 * rand() / RAND_MAX < 0.5) heads.increment();
         else tails.increment();
     }
