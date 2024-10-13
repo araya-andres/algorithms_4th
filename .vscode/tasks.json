@@ -16,6 +16,17 @@
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "label": "bazel clean",
+            "type": "shell",
+            "command": "bazel",
+            "args": [
+                "clean"
+            ],
+            "group": {
+                "kind": "build"
+            }
         }
     ]
 }
