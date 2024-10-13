@@ -1,13 +1,13 @@
 ## Build
 
 ```
-bazel build //ch01:binary_search
+bazel build //ch01:flips
 ```
 
 ## Run
 
 ```
-echo 42 | bazel-bin/ch01/binary_search data/ints.txt
+bazel run //ch01:flips 100
 ```
 
 ## Unit tests
