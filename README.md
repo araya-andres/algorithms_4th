@@ -19,5 +19,5 @@ bazel test tests
 or
 
 ```
-bezel run //tests:tests
+bazel run //tests:tests
 ```
