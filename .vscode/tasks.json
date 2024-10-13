@@ -27,12 +27,6 @@
             "group": {
                 "kind": "build"
             }
-        },
-        {
-            "label": "run unit tests",
-            "type": "shell",
-            "command": "${workspaceRoot}/bazel-bin/tests/tests",
-            "dependsOn": "bazel build"
         }
     ]
 }

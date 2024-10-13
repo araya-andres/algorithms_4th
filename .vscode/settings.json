@@ -1,9 +1,4 @@
 {
-    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
-    "files.associations": {
-        "string": "cpp",
-        "queue": "cpp"
-    },
     "testMate.cpp.test.advancedExecutables": [
         {
             "pattern": "bazel-bin/tests/*"
