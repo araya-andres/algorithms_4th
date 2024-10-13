@@ -15,3 +15,9 @@ echo 42 | bazel-bin/ch01/binary_search data/ints.txt
 ```
 bazel test tests
 ```
+
+or
+
+```
+bezel run //tests:tests
+```
