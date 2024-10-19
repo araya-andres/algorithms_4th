@@ -1,3 +1,5 @@
+#pragma once
+
 #include <algorithm>
 #include <functional>
 #include <numeric>
@@ -5,20 +7,19 @@
 #include <vector>
 #include <utility>
 
-template <typename C, typename Cmp, typename T = C::value_type>
-auto minmax_helper(const C &container, const Cmp &cmp) -> T
-{
-    T retval = container[0];
-    for (const T &val : container)
-        if (cmp(val, retval))
-            retval = val;
-    return retval;
-}
-
 namespace filtering
 {
-
     // See https://devblogs.microsoft.com/oldnewthing/20190619-00/?p=102599
+    template <typename C, typename Cmp, typename T = C::value_type>
+    auto minmax_helper(const C &container, const Cmp &cmp) -> T
+    {
+        T retval = container[0];
+        for (const T &val : container)
+            if (cmp(val, retval))
+                retval = val;
+        return retval;
+    }
+
     template <typename C, typename T = C::value_type>
     auto max(const C &container) -> std::optional<T>
     {
