@@ -3,5 +3,8 @@
         {
             "pattern": "bazel-bin/tests/*"
         }
-    ]
+    ],
+    "files.associations": {
+        "optional": "cpp"
+    }
 }
