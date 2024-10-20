@@ -4,8 +4,8 @@
 
 namespace binary_search
 {
-    template <typename T>
-    int rank(const T key, const std::vector<T> &a)
+    template <typename C, typename T = C::value_type>
+    auto rank(const T key, const C &a) -> int
     {
         // Array must be sorted.
         int lo = 0;
@@ -24,8 +24,8 @@ namespace binary_search
         return -1;
     }
 
-    template <typename T>
-    int rank_r(const T key, const std::vector<T> &a, const int lo, const int hi)
+    template <typename C, typename T = C::value_type>
+    auto rank_r(const T key, const C &a, const int lo, const int hi) -> int
     {
         if (lo > hi)
             return -1;
@@ -37,8 +37,8 @@ namespace binary_search
         return mid;
     }
 
-    template <typename T>
-    int rank_r(const T key, const std::vector<T> &a)
+    template <typename C, typename T = C::value_type>
+    auto rank_r(const T key, const C &a) -> int
     {
         return rank_r(key, a, 0, a.size() - 1);
     }

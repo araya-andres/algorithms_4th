@@ -1,11 +1,12 @@
 #pragma once
 
 #include <algorithm>
+#include <concepts>
 #include <functional>
 #include <numeric>
 #include <optional>
-#include <vector>
 #include <utility>
+#include <vector>
 
 namespace filtering
 {
@@ -48,6 +49,7 @@ namespace filtering
     }
 
     template <typename C, typename T = C::value_type>
+        requires std::is_arithmetic<T>::value && std::convertible_to<T, double>
     auto median(const C& container) -> std::optional<double>
     {
         const auto sz = container.size();
@@ -62,6 +64,7 @@ namespace filtering
     }
 
     template <typename C, typename T = C::value_type>
+        requires std::is_arithmetic<T>::value && std::convertible_to<T, double>
     auto average(const C& container) -> std::optional<double>
     {
         const auto sz = container.size();
